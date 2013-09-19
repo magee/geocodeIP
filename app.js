@@ -15,13 +15,12 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.use(connectTimeout({ time: 3000 }));
 app.use(app.router);
-
+process.env.PWD = process.cwd()
 //app.use(express['static'](path.join(__dirname, '/public')));
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(process.env.PWD + '/public'));
 console.log('dirname: ', __dirname)
 
-app.set('views', __dirname + '/views');
-console.log('dirname: ', __dirname + '/views');
+app.set('views', process.env.PWD + '/views');
 app.set('view engine', 'jade'); //extension of views
 
 app.get('/', routes.index);
