@@ -1,0 +1,32 @@
+doctype 5
+html(ng-app='app')
+    head
+      meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+      style div {margin: 10 10 10 20}; p {margin-left: 30px};
+    body
+      div.container(style="margin-left: 30px; width: 700px")
+        h1 geocode-ip
+        h2 A Node.js IP Geocode lookup API
+        div Usage:
+          p To find all available geocode data for the IP address provided:
+          code(style="margin-left:30px") http://geocode-ip.herokuapp.com/location/111-222-333-444
+          p(style="margin-left: 30px") Where 111-222-333-444 is an IP4 address.
+            b &nbsp; Note:&nbsp;
+            | dashes are substituted for dots in the request.
+          p(style="margin-left: 30px")
+            b Returns: &nbsp;
+            | an object containing all geocode data for the IP address provided.
+          br
+        div To find just one data element ([lat] and [long] currently available):
+        br
+        div(style="margin-left: 40px") http://geocode-ip.herokuapp.com/location/111-222-333-444/lat
+        div(style="margin-left: 40px") http://geocode-ip.herokuapp.com/location/111-222-333-444/long
+        br
+        div Returns a string which is the numeric latitude or longitude value. &nbsp; &nbsp;
+          b Note: &nbsp;
+          | you will not see these in the browser.  They are returned to the calling function.
+        br
+        div Geodata:
+          p(style="margin-left: 30px")  Open source IP Data and code library provided by IP2Location http://www.ip2location.com/
+
+
