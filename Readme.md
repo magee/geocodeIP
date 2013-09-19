@@ -25,3 +25,18 @@ http://geocode-ip.herokuapp.com/location/111-222-333-444/long
 
 Returns a string which is the numeric latitude or longitude value.  Note: you will not see these in the browser.  They are returned to the calling function.
 
+Install:
+------------------------
+
+Open Terminal (on Mac) or the equivalent shell on your system.
+Navigate to the folder where you'd like the geocode-ip source code to be copied.
+Enter the following commands
+[code]
+git clone git@github.com:magee/geocodeIP.git && cd geocodeIP
+npm install
+[/code]
+
+Geodata:
+------------------------
+
+Open source IP Data and code library provided by IP2Location http://www.ip2location.com/
