@@ -16,6 +16,8 @@ app.set('port', process.env.PORT || 3003);
 app.use(connectTimeout({ time: 3000 }));
 app.use(app.router);
 
+app.use(express['static'](path.join(__dirname, '/public')));
+
 app.get('/', routes.index);
 app.get('/location/:ip', geocodes.findByIP);
 app.get('/location/:ip/:stat', geocodes.findStat);
