@@ -18,12 +18,15 @@ app.use(app.router);
 
 app.use(express['static'](path.join(__dirname, '/public')));
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
+
 app.get('/', routes.index);
 app.get('/location/:ip', geocodes.findByIP);
 app.get('/location/:ip/:stat', geocodes.findStat);
 
 
-http.createServer(app).listen(app.get('port'), function () {
+app.listen(app.get('port'), function () {
   'use strict';
   console.log('Express server listening on port ' + app.get('port'));
 });
