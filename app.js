@@ -24,7 +24,12 @@ app.set('views', process.env.PWD + '/views');
 app.set('view engine', 'jade'); //extension of views
 
 app.get('/', routes.index);
+app.get('/:ip', geocodes.findByIP);
+app.get('/:ip/longitude', geocodes.findLong);
+app.get('/:ip/latitude', geocodes.findLat);
 app.get('/location/:ip', geocodes.findByIP);
+app.get('/location/:ip/longitude', geocodes.findLong);
+app.get('/location/:ip/latitude', geocodes.findLat);
 app.get('/location/:ip/:stat', geocodes.findStat);
 
 
